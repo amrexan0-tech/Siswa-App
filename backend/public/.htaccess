@@ -1,0 +1,9 @@
+Options -Indexes
+RewriteEngine On
+
+# Izinkan akses ke file & folder yang ada
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Semua request diarahkan ke index.php
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
